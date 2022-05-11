@@ -26,5 +26,5 @@ printf('
             </div>
         </div>
     </nav>
-    <h3>mysqli procedural</h3>
+    <h3>mysqli orientado a objetos</h3>
 ');

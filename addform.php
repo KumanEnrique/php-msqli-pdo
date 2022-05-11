@@ -47,13 +47,6 @@ if(isset($_POST['name']) && isset($_POST['year']) && isset($_POST['average']) &&
     $image = $_POST['image'];
     $section = $_POST['section'];
     
-    $sql = "INSERT INTO estudiantes (id, nombre, edad, promedio, imagen, id_seccion, fecha) VALUES (null,'{$name}', '{$year}', '{$average}','{$image}', '{$section}', NOW())";
-
-    if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
+    $db->insert($name,$year,$average,$image,$section);
 }
-mysqli_close($conn);
 include_once('inc/footer.php');
