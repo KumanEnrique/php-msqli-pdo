@@ -1,8 +1,6 @@
 <?php
 include_once('database.php');
 include_once('inc/header.php');
-$sql = "SELECT * FROM estudiantes";
-$result = mysqli_query($conn, $sql);
 
 $head_html = '
     <div class="container">
@@ -54,24 +52,7 @@ $footer_html = '
 ';
 printf($head_html);
 
-if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-        printf($body_html,
-            $row['id'],
-            $row['nombre'],
-            $row['edad'],
-            $row['promedio'],
-            $row['imagen'],
-            $row['id_seccion'],
-            $row['fecha'],
-            $row['id'],
-            $row['id'],
-        );
-    }
-} else {
-    echo "0 results";
-}
+$db->select($body_html);
 
 printf($footer_html);
 
