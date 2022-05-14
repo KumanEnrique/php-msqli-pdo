@@ -26,5 +26,5 @@ printf('
             </div>
         </div>
     </nav>
-    <h3>mysqli orientado a objetos</h3>
+    <h3>conexion a base de datos mediante PDO</h3>
 ');
